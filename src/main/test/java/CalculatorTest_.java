@@ -1,30 +1,30 @@
-package main.test.java;
-import org.junit.*;
-import org.junit.rules.ExpectedException;
+import org.junit.Test;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
+import java.io.IOException;
 
-import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
+public class CalculatorTest {
 
-public class CalculatorTest_ {
-    private CalculatorTest_ calculator_;
+        @Test
+        public void summa() throws IOException {
+            assertEquals(20, Calculator.plus(18,2));
+        }
 
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
+        @Test
+        public void subtruction() throws IOException{
+            assertEquals(34, Calculator.minus(35,1));
+        }
 
-    @BeforeClass
-    public static void globalSetUp(){
-        System.out.println("Initial setup...");
-        System.out.println("Code executes onle once");
-    }
 
-    @Before
-    public void setUp(){
-        System.out.println("Code executes before each test method");
-        calculator
-    }
+        @Test
+        public void multiply() throws IOException{
+            assertEquals(48, Calculator.mult(6,8));
+        }
 
+
+        @Test
+        public void divide() throws IOException{
+            assertEquals(15, Calculator.divide(60,4));
+        }
 }
